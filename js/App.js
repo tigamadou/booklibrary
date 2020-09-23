@@ -17,21 +17,22 @@ Book.prototype.setRead = function(read){
 function addBook(newBook){
     library.push(newBook)
 }
-// Create the book Bible
-let bible = new Book('The Holly Bible','Jesus',3000,'not-read')
-
-// Add bible tot he library
-addBook(bible)
-
-// Create the book little Mairmaid
-let LittleMermaid= new Book('The little mermaid','Disney',300,'not-read')
-
-// Set the book as read
-LittleMermaid.setRead('read')
-
-// Add the book to the library
-addBook(LittleMermaid)
 
 
-// Print the library
-console.log(library)
+let addBookButton = document.getElementById('addBookButton')
+let newBookForm = document.forms[0]
+
+addBookButton.addEventListener('click',function(){
+    var name = newBookForm['name'].value
+    var author = newBookForm['author'].value
+    var pages = newBookForm['pages'].value
+    var read = newBookForm['read'].checked    
+   if(read){
+        read="read"
+   }else{
+        read="not-read"
+   }
+    let newBook = new Book(name,author,pages,read)
+    addBook(newBook)
+    console.log(library)
+});

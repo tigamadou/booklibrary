@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Document</title>
+    <title>Book Library</title>
 </head>
 
 <body>
@@ -39,29 +39,29 @@
 
 
 
-        <form id="add-book">
+        <form id="newBookForm" name="newBookForm">
             <div class="form-group">
                 <label for="formGroupExampleInput">Title</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter the title of the book">
+                <input type="text" name="name" class="form-control" id="bookName" placeholder="Enter the title of the book">
             </div>
             <div class="form-group">
                 <label for="formGroupExampleInput2">Author</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="What's the author name?">
+                <input type="text" name="author" class="form-control" id="bookAuthor" placeholder="What's the author name?">
             </div>
 
             <div class="form-group">
                 <label for="formGroupExampleInput">Number of Page(s)</label>
-                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter the book's page">
+                <input type="text" name="pages" class="form-control" id="bookPage" placeholder="Enter the book's page">
             </div>
 
             <div class="form-check">
-                <input class="form-check-input" type="checkbox" name="gridRadios" id="gridRadios2" value="option2">
+                <input class="form-check-input" name="read" type="checkbox" value="off" id="bookRead">
                 <label class="form-check-label" for="gridRadios2">
                   Read
                 </label>
             </div>
 
-            <button class="btn btn-primary " id="new-book"> Add New Book</button>
+            <div class="btn btn-primary " id="addBookButton"> Add New Book</div>
         </form>
     </div>
 
