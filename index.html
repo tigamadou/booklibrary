@@ -1,13 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>Document</title>
 </head>
-<body>
-    <h1>Book Library</h1>
 
-    <script src="js/App.js"></script>
+<body>
+
+
+    <div class="container">
+
+        <h1>Book Library</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Pages</th>
+                    <th scope="col">Read</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                    <td>@mdo</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+        <form id="add-book">
+            <div class="form-group">
+                <label for="formGroupExampleInput">Title</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter the title of the book">
+            </div>
+            <div class="form-group">
+                <label for="formGroupExampleInput2">Author</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="What's the author name?">
+            </div>
+
+            <div class="form-group">
+                <label for="formGroupExampleInput">Number of Page(s)</label>
+                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Enter the book's page">
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="gridRadios" id="gridRadios2" value="option2">
+                <label class="form-check-label" for="gridRadios2">
+                  Read
+                </label>
+            </div>
+
+            <button class="btn btn-primary " id="new-book"> Add New Book</button>
+        </form>
+    </div>
+
+
+
+
+    <script src=" js/App.js ">
+    </script>
 </body>
+
+</html>
+
 </html>
