@@ -5,67 +5,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/pulse/bootstrap.min.css"/>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="css/style.css">
     <title>Book Library</title>
 </head>
 
 <body>
 
-
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Book Library</h1>
+        </div>
+    </div>
     <div class="container">
 
-        <h1>Book Library</h1>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Author</th>
-                    <th scope="col">Pages</th>
-                    <th scope="col">Read</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-
-                </tr>
-
-            </tbody>
-        </table>
+        <div class="row">
+            <div class="col-8">
+                <div class="card">
+                    <div class="card-body">
 
 
-
-        <form id="newBookForm" name="newBookForm">
-            <div class="form-group">
-                <label for="formGroupExampleInput">Title</label>
-                <input type="text" name="name" class="form-control" id="bookName" placeholder="Enter the title of the book">
+                        <table class="table table-borderless">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Author</th>
+                                    <th scope="col">Pages</th>
+                                    <th scope="col">Read</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                    <td>@mdo</td>
+                
+                                </tr>
+                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
             </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput2">Author</label>
-                <input type="text" name="author" class="form-control" id="bookAuthor" placeholder="What's the author name?">
-            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
 
-            <div class="form-group">
-                <label for="formGroupExampleInput">Number of Page(s)</label>
-                <input type="text" name="pages" class="form-control" id="bookPage" placeholder="Enter the book's page">
-            </div>
+                        <form id="newBookForm" name="newBookForm">
+                            <legend>Add new Book</legend>
+                            <div class="form-group">
+                                <!-- <label for="formGroupExampleInput">Title</label> -->
+                                <input type="text" name="name" class="form-control" id="bookName" placeholder="Enter the title of the book" required>
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="formGroupExampleInput2">Author</label> -->
+                                <input type="text" name="author" class="form-control" id="bookAuthor" placeholder="What's the author name?" required>
+                            </div>
+                
+                            <div class="form-group">
+                                <!-- <label for="formGroupExampleInput">Number of Page(s)</label> -->
+                                <input type="text" name="pages" class="form-control" id="bookPage" placeholder="Enter the book's page" required>
+                            </div>
+                
+                            <div class="form-check">
+                                <input class="form-check-input" name="read" type="checkbox" value="off" id="bookRead" required>
+                                <label class="form-check-label" for="gridRadios2">
+                                  Read
+                                </label>
+                            </div>
+                            <br>
+                            <div class="form-group">
 
-            <div class="form-check">
-                <input class="form-check-input" name="read" type="checkbox" value="off" id="bookRead">
-                <label class="form-check-label" for="gridRadios2">
-                  Read
-                </label>
+                                <button class="btn btn-primary " id="addBookButton"> Add New Book</button>
+                                <button type="reset" class="btn btn-light " id="addBookButton"> Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="btn btn-primary " id="addBookButton"> Add New Book</div>
-        </form>
+
     </div>
 
-
+    <div class="fab">
+        <i class="fa fa-plus"></i>
+    </div>
 
 
     <script src=" js/App.js ">

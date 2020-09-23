@@ -22,11 +22,14 @@ function addBook(newBook){
 let addBookButton = document.getElementById('addBookButton')
 let newBookForm = document.forms[0]
 
-addBookButton.addEventListener('click',function(){
+newBookForm.addEventListener('submit',function(event){
+    event.preventDefault();
+    event.stopPropagation();
     var name = newBookForm['name'].value
     var author = newBookForm['author'].value
     var pages = newBookForm['pages'].value
     var read = newBookForm['read'].checked    
+    console.log(newBookForm.checkValidity())
    if(read){
         read="read"
    }else{
