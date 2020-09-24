@@ -15,7 +15,17 @@ body {
   height: 80px;
   border-radius: 50%;
   background: #5f27cd;
-  color: #fff; }
+  color: #ffffff;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 10px 5px rgba(100, 100, 100, 0.3);
+  cursor: pointer;
+  transition: all 0.25s ease-in-out; }
+  .fab:hover {
+    background: #ffffff;
+    color: #5f27cd; }
 
 .card {
   border-radius: 10px;
@@ -34,5 +44,14 @@ body {
       background: #fff; }
     .card .btn-primary:active {
       background: #5f27cd; }
+
+.table td {
+  vertical-align: middle; }
+
+.form {
+  display: none;
+  margin-bottom: 2rem; }
+  .form.active {
+    display: block; }
 
 /*# sourceMappingURL=style.css.map */
