@@ -52,3 +52,30 @@ body
     margin-bottom: 2rem
     &.active
         display: block
+.switch 
+    height: 20px
+    width: 40px
+    background-color: blue
+    border-radius: 10px
+    overflow: hidden
+    transition: all 0.2s ease
+    .cursor 
+        height: 20px
+        width: 40px
+        background-color: red
+        border-radius: 50px
+        transform: translate3D(-50%, 0, 0)
+        transition: all 0.2s ease
+
+    &.active
+        background-color: black
+        .cursor
+            background-color: pink
+            transform: translate3D(50%, 0, 0)
+            
+            
+
+        
+
+
+
