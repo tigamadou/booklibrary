@@ -111,6 +111,8 @@ newBookFormButton.addEventListener('click', function() {
 
 function toggleFormContainer() {
     formContainer.classList.toggle('active')
+    newBookForm.classList.toggle('active')
+    newBookFormButton.classList.toggle('active')
 }
 
 table.addEventListener('click', function(e) {
