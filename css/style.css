@@ -1,15 +1,11 @@
 body {
-  background: #fff;
-}
+  background: #fff; }
 
 .jumbotron {
   background: #5f27cd;
-  margin-bottom: 30px;
-}
-
-.jumbotron h1 {
-  color: #fff;
-}
+  margin-bottom: 30px; }
+  .jumbotron h1 {
+    color: #fff; }
 
 .fab {
   position: fixed;
@@ -19,57 +15,40 @@ body {
   height: 80px;
   border-radius: 50%;
   background: #5f27cd;
-  color: #fff;
+  color: #ffffff;
   font-size: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 10px 5px rgba(100, 100, 100, 0.3);
+  box-shadow: 0px 10px 5px rgba(100, 100, 100, 0.3);
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
-}
-
-.fab.active {
-  transform: rotate(135deg);
-}
-
-.fab:hover {
-  background: #fff;
-  color: #5f27cd;
-}
+  transition: all 0.25s ease-in-out; }
+  .fab.active {
+    transform: rotate(135deg); }
+  .fab:hover {
+    background: #ffffff;
+    color: #5f27cd; }
 
 .card {
   border-radius: 10px;
   border-color: #f9f9f9;
-  box-shadow: 0 10px 20px -10px rgba(100, 100, 100, 0.2);
-}
-
-.card legend {
-  margin-bottom: 15px;
-}
-
-.card .form-group .form-control {
-  border-radius: 50px !important;
-}
-
-.card .btn-primary {
-  cursor: pointer;
-  background: #5f27cd;
-  border-color: #5f27cd;
-}
-
-.card .btn-primary:hover {
-  color: #5f27cd;
-  background: #fff;
-}
-
-.card .btn-primary:active {
-  background: #5f27cd;
-}
+  box-shadow: 0px 10px 20px -10px rgba(100, 100, 100, 0.2); }
+  .card legend {
+    margin-bottom: 15px; }
+  .card .form-group .form-control {
+    border-radius: 50px !important; }
+  .card .btn-primary {
+    cursor: pointer;
+    background: #5f27cd;
+    border-color: #5f27cd; }
+    .card .btn-primary:hover {
+      color: #5f27cd;
+      background: #fff; }
+    .card .btn-primary:active {
+      background: #5f27cd; }
 
 .table td {
-  vertical-align: middle;
-}
+  vertical-align: middle; }
 
 .form {
   position: fixed;
@@ -78,12 +57,9 @@ body {
   margin-bottom: 2rem;
   padding-bottom: 80px;
   border: 2px solid #5f27cd;
-  transition: right 0.25s ease-in-out;
-}
-
-.form.active {
-  right: 10px;
-}
+  transition: right 0.25s ease-in-out; }
+  .form.active {
+    right: 10px; }
 
 .switch {
   height: 20px;
@@ -91,23 +67,18 @@ body {
   background-color: #f1f1f1;
   border-radius: 10px;
   overflow: hidden;
-  transition: all 0.2s ease;
-}
+  transition: all 0.2s ease; }
+  .switch .cursor {
+    height: 20px;
+    width: 40px;
+    background-color: #999;
+    border-radius: 50px;
+    transform: translate3D(-50%, 0, 0);
+    transition: all 0.2s ease; }
+  .switch.active {
+    background-color: #9b75e5; }
+    .switch.active .cursor {
+      background-color: #5f27cd;
+      transform: translate3D(50%, 0, 0); }
 
-.switch .cursor {
-  height: 20px;
-  width: 40px;
-  background-color: #999;
-  border-radius: 50px;
-  transform: translate3d(-50%, 0, 0);
-  transition: all 0.2s ease;
-}
-
-.switch.active {
-  background-color: #9b75e5;
-}
-
-.switch.active .cursor {
-  background-color: #5f27cd;
-  transform: translate3d(50%, 0, 0);
-}
+/*# sourceMappingURL=style.css.map */
