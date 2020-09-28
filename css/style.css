@@ -12,6 +12,7 @@ body {
 }
 
 .fab {
+  z-index: 2;
   position: fixed;
   bottom: 50px;
   right: 10px;
@@ -29,7 +30,11 @@ body {
   transition: all 0.25s ease-in-out;
 }
 
-.fab.active {
+.fab .fab-rotate {
+  transition: all 0.25s ease-in-out;
+}
+
+.fab.active .fab-rotate {
   transform: rotate(135deg);
 }
 
@@ -72,13 +77,15 @@ body {
 }
 
 .form {
+  z-index: 1;
   position: fixed;
-  bottom: 50px;
+  bottom: 40px;
   right: -500px;
   margin-bottom: 2rem;
   padding-bottom: 80px;
   border: 2px solid #5f27cd;
   transition: right 0.25s ease-in-out;
+  box-shadow: 0 20px 20px -15px #4b1fa2;
 }
 
 .form.active {
@@ -92,6 +99,7 @@ body {
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .switch .cursor {

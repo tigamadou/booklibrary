@@ -16,7 +16,7 @@ function Book(title, author, pages, read) {
   this.addedToView = false;
 }
 /** function to insert the data into the table */
-const addBookToView = (newBook) => {
+const render = (newBook) => {
   const row = document.createElement('tr');
   row.setAttribute('id', newBook.id);
 
@@ -55,7 +55,7 @@ const LoopBooks = () => {
   for (let i = 0; i < library.length; i += 1) {
     const currentBook = library[i];
     if (!currentBook.addedToView) {
-      addBookToView(library[i]);
+      render(library[i]);
       currentBook.addedToView = true;
     }
   }
@@ -63,7 +63,7 @@ const LoopBooks = () => {
 
 
 /** Method to add the book */
-const addBook = (newBook) => {
+const addBookToLibrary = (newBook) => {
   for (let i = 0; i < library.length; i += 1) {
     if (library[i].id === newBook.id) {
       return;
@@ -112,7 +112,7 @@ newBookForm.addEventListener('submit', (event) => {
     read = false;
   }
   const newBook = new Book(title, author, pages, read);
-  addBook(newBook);
+  addBookToLibrary(newBook);
 });
 
 newBookFormButton.addEventListener('click', () => {

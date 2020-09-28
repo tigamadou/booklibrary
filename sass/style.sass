@@ -7,6 +7,7 @@ body
     h1
         color: #fff
 .fab
+    z-index: 2
     position: fixed
     bottom: 50px
     right: 10px
@@ -22,8 +23,11 @@ body
     box-shadow: 0px 10px 5px rgba(100,100,100,.3)
     cursor: pointer
     transition: all 0.25s ease-in-out
+    .fab-rotate
+        transition: all 0.25s ease-in-out
     &.active
-        transform: rotate(135deg)
+        .fab-rotate
+            transform: rotate(135deg)
     &:hover
         background: #ffffff
         color: #5f27cd
@@ -50,13 +54,15 @@ body
     td
         vertical-align: middle
 .form
+    z-index: 1
     position: fixed
-    bottom: 50px
+    bottom: 40px
     right: -500px
     margin-bottom: 2rem
     padding-bottom: 80px
     border: 2px solid  #5f27cd
     transition: right 0.25s ease-in-out
+    box-shadow: 0px 20px 20px -15px darken(#5f27cd,10% )
     &.active
         right: 10px
 .switch 
@@ -66,6 +72,7 @@ body
     border-radius: 10px
     overflow: hidden
     transition: all 0.2s ease
+    cursor: pointer
     .cursor 
         height: 20px
         width: 40px
