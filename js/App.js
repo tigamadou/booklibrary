@@ -49,6 +49,9 @@ function addBookToView(newBook) {
     let td4 = document.createElement('td')
     let switch_button = document.createElement('div')
     switch_button.className='switch'
+    if(newBook.read){
+        switch_button.className='switch active'
+    }
     let switch_button_cursor = document.createElement('div')
     switch_button_cursor.className='cursor'
     switch_button.appendChild(switch_button_cursor)
@@ -90,9 +93,9 @@ newBookForm.addEventListener('submit', function(event) {
     var pages = newBookForm['pages'].value
     var read = newBookForm['read'].checked
     if (read) {
-        read = "read"
+        read = true
     } else {
-        read = "not-read"
+        read = false
     }
     let newBook = new Book(title, author, pages, read)
     addBook(newBook)
@@ -103,6 +106,7 @@ newBookForm.addEventListener('submit', function(event) {
 newBookFormButton.addEventListener('click', function() {
     toggleFormContainer()
 })
+
 
 
 function toggleFormContainer() {
@@ -119,7 +123,13 @@ table.addEventListener('click', function(e) {
 
     if (e.target.classList.contains('switch')) {
         e.target.classList.toggle('active')
-
+        let id = e.target.parentNode.parentNode.id
+        togglebookRead(id)
+    }
+    if (e.target.classList.contains('cursor')) {
+        e.target.parentNode.classList.toggle('active')
+        let id = e.target.parentNode.parentNode.parentNode.id
+        togglebookRead(id)
     }
 
 
@@ -147,3 +157,14 @@ var switch_toggle = document.querySelector('.switch')
     switch_toggle.classList.toggle('active')}
 
 )
+
+function togglebookRead(id){
+    for (let i = 0; i < library.length; i++) {
+        var currentBook = library[i]
+        if (currentBook.id === id) {
+            library[i].read = !library[i].read
+            console.log(library)
+            return
+        }
+    }
+}
