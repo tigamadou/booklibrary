@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/pulse/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Book Library</title>
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-3">Book Library</h1>
+        </div>
+    </div>
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <div class="card form " id="formContainer">
+                    <div class="card-body">
+
+                        <form id="newBookForm" name="newBookForm">
+                            <legend>Add new Book</legend>
+                            <div class="form-group">
+                                <input type="text" name="title" class="form-control" id="bookName" placeholder="Enter the title of the book" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="author" class="form-control" id="bookAuthor" placeholder="What's the author name?" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="number" name="pages" class="form-control" id="bookPage" placeholder="Enter the book's page" required>
+                            </div>
+                         
+
+                            <div class="form-check">
+                                <input class="form-check-input" name="read" type="checkbox" value="off" id="bookRead" >
+                                <label class="form-check-label" for="gridRadios2">
+                                  Read
+                                </label>
+                            </div>
+                            <br>
+                            <div class="form-group">
+
+                                <button class="btn btn-primary " id="addBookButton"> Add New Book</button>
+                                <button type="reset" class="btn btn-light " id="addBookButton" id="cancelFormContainer" onclick="toggleFormContainer()" > Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="">
+
+
+                        <table class="table table-borderless table-hover" id="table-data">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col" width="50%">Title</th>
+                                    <th scope="col">Author</th>
+                                    <th scope="col">Pages</th>
+                                    <th scope="col">Read</th>
+                                    <th scope="col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                
+            </div>
+           
+        </div>
+
+        
+
+
+    </div>
+
+    <div class="fab" id="newBookFormButton" title="Add a new Book">
+        <div class="fab-rotate">
+
+            <span class="add">
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </span>
+           
+        </div>
+        
+    </div>
+
+    
+    <script src=" js/App.js ">
+    </script>
+</body>
+
+</html>
+
+</html>
