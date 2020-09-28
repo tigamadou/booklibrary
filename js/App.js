@@ -7,7 +7,7 @@ const newBookForm = document.forms[0];
 /** Library */
 const library = [];
 
-function Book(title, author, pages, read) {
+function Book(title, author, pages, read){
   this.id = `${title.toLowerCase().split(' ').join('-')}-${author.toLowerCase().split(' ').join('-')}`;
   this.title = title;
   this.author = author;
@@ -16,7 +16,7 @@ function Book(title, author, pages, read) {
   this.addedToView = false;
 }
 /** function to insert the data into the table */
-function addBookToView(newBook) {
+let addBookToView = (newBook)=> {
   const row = document.createElement('tr');
   row.setAttribute('id', newBook.id);
 
@@ -51,7 +51,7 @@ function addBookToView(newBook) {
   table.appendChild(row);
 }
 
-function LoopBooks() {
+let LoopBooks= ()=> {
   for (let i = 0; i < library.length; i += 1) {
     const currentBook = library[i];
     if (!currentBook.addedToView) {
@@ -63,7 +63,7 @@ function LoopBooks() {
 
 
 /** Method to add the book */
-function addBook(newBook) {
+let addBook =(newBook)=>{
   for (let i = 0; i < library.length; i += 1) {
     if (library[i].id === newBook.id) {
       return;
@@ -72,12 +72,12 @@ function addBook(newBook) {
   library.push(newBook);
   LoopBooks();
 }
-function toggleFormContainer() {
+let toggleFormContainer =()=> {
   formContainer.classList.toggle('active');
   newBookForm.classList.toggle('active');
   newBookFormButton.classList.toggle('active');
 }
-function removeBook(id) {
+let removeBook = (id)=> {
   const row = document.getElementById(id);
   row.remove();
   for (let i = 0; i < library.length; i += 1) {
@@ -88,7 +88,7 @@ function removeBook(id) {
   }
 }
 
-function togglebookRead(id) {
+let togglebookRead = (id)=>{
   for (let i = 0; i < library.length; i += 1) {
     const currentBook = library[i];
     if (currentBook.id === id) {
@@ -139,7 +139,4 @@ table.addEventListener('click', (e) => {
 });
 
 
-const switchToggle = document.querySelector('.switch');
-switchToggle.addEventListener('click', () => {
-  switchToggle.classList.toggle('active');
-});
+
