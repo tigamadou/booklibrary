@@ -10,7 +10,7 @@ This project development was achieved using the following technologies:
 
 ## Live Demo
 
-NA
+[See Demo](https://tigamadou.github.io/booklibrary/) 
 
 ## Home Page of the Application
 ![screenshot](lib.png)
@@ -31,16 +31,18 @@ To get a local copy up and running follow these simple example steps.
 - right click on the index.html file and select open with a browser
 
 
-## Author
+## Authors
 
 👤 **Author**
 
 - Github: [@haraphat01](https://github.com/haraphat01)
 
 
-👤 **Author**
+👤 **Amadou IBRAHIM**
 
-- Github: [@tigamadou](https://github.com/tigamadou)
+- Github: [@genzaraki](https://github.com/tigamadou)
+- Twitter: [@tigamadou](https://twitter.com/tigamadou)
+- Linkedin: [Amadou IBRAHIM](https://www.linkedin.com/in/amadou-ibrahim-75769167/)
 
 
 
