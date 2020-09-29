@@ -1,0 +1,121 @@
+body {
+  background: #fff;
+}
+
+.jumbotron {
+  background: #5f27cd;
+  margin-bottom: 30px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+}
+
+.fab {
+  z-index: 2;
+  position: fixed;
+  bottom: 50px;
+  right: 10px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: #5f27cd;
+  color: #fff;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 5px rgba(100, 100, 100, 0.3);
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.fab .fab-rotate {
+  transition: all 0.25s ease-in-out;
+}
+
+.fab.active .fab-rotate {
+  transform: rotate(135deg);
+}
+
+.fab:hover {
+  background: #fff;
+  color: #5f27cd;
+}
+
+.card {
+  border-radius: 10px;
+  border-color: #f9f9f9;
+  box-shadow: 0 10px 20px -10px rgba(100, 100, 100, 0.2);
+}
+
+.card legend {
+  margin-bottom: 15px;
+}
+
+.card .form-group .form-control {
+  border-radius: 50px !important;
+}
+
+.card .btn-primary {
+  cursor: pointer;
+  background: #5f27cd;
+  border-color: #5f27cd;
+}
+
+.card .btn-primary:hover {
+  color: #5f27cd;
+  background: #fff;
+}
+
+.card .btn-primary:active {
+  background: #5f27cd;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.form {
+  z-index: 1;
+  position: fixed;
+  bottom: 40px;
+  right: -500px;
+  margin-bottom: 2rem;
+  padding-bottom: 80px;
+  border: 2px solid #5f27cd;
+  transition: right 0.25s ease-in-out;
+  box-shadow: 0 20px 20px -15px #4b1fa2;
+}
+
+.form.active {
+  right: 10px;
+}
+
+.switch {
+  height: 20px;
+  width: 40px;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.switch .cursor {
+  height: 20px;
+  width: 40px;
+  background-color: #999;
+  border-radius: 50px;
+  transform: translate3d(-50%, 0, 0);
+  transition: all 0.2s ease;
+}
+
+.switch.active {
+  background-color: #9b75e5;
+}
+
+.switch.active .cursor {
+  background-color: #5f27cd;
+  transform: translate3d(50%, 0, 0);
+}
