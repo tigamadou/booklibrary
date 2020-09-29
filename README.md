@@ -10,7 +10,7 @@ This project development was achieved using the following technologies:
 
 ## Live Demo
 
-NA
+NA[See Demo](https://tigamadou.github.io/booklibrary/) 
 
 ## Home Page of the Application
 ![screenshot](lib.png)
