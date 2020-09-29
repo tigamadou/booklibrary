@@ -95,7 +95,7 @@ const LibraryApp = () => {
       }
     }
   };
-  
+
   return () => {
     /** variable to add listeners to the new book */
     newBookForm.addEventListener('submit', (event) => {
