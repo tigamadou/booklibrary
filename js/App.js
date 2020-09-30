@@ -1,22 +1,76 @@
 /** Library Book App */
 
-const LibraryApp = () => {
-  const table = document.getElementById('table-data');
-  const newBookFormButton = document.getElementById('newBookFormButton');
-  const formContainer = document.getElementById('formContainer');
-  const cancelFormContainer = document.getElementById('cancelFormContainer');
-  const newBookForm = document.forms[0];
-  const library = [];
+class LibraryApp {
+  newBookForm = document.forms[0];
 
-  const Book = (title, author, pages, read) => {
+  constructor() {
+    this.table = document.getElementById('table-data');
+
+    this.newBookFormButton = document.getElementById('newBookFormButton');
+
+    this.formContainer = document.getElementById('formContainer');
+
+    this.cancelFormContainer = document.getElementById('cancelFormContainer');
+
+
+    this.library = [];
+  }
+
+  run = () => {
+    /** variable to add listeners to the new book */
+    this.newBookForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const title = this.newBookForm.title.value;
+      const author = this.newBookForm.author.value;
+      const pages = this.newBookForm.pages.value;
+      let read = this.newBookForm.read.checked;
+      if (read) {
+        read = true;
+      } else {
+        read = false;
+      }
+      const newBook = this.Book(title, author, pages, read);
+      this.addBookToLibrary(newBook);
+    });
+
+    this.newBookFormButton.addEventListener('click', () => {
+      this.toggleFormContainer();
+    });
+    this.cancelFormContainer.addEventListener('click', () => {
+      this.toggleFormContainer();
+    });
+
+
+    this.table.addEventListener('click', (e) => {
+      if (e.target.classList.contains('removeBook')) {
+        const { id } = e.target.parentNode.parentNode;
+        this.removeBook(id);
+      }
+
+      if (e.target.classList.contains('switch')) {
+        e.target.classList.toggle('active');
+        const { id } = e.target.parentNode.parentNode;
+        this.togglebookRead(id);
+      }
+      if (e.target.classList.contains('cursor')) {
+        e.target.parentNode.classList.toggle('active');
+        const { id } = e.target.parentNode.parentNode.parentNode;
+        this.togglebookRead(id);
+      }
+    });
+  }
+
+  Book = (title, author, pages, read) => {
     const id = `${title.toLowerCase().split(' ').join('-')}-${author.toLowerCase().split(' ').join('-')}`;
     const addedToView = false;
     return {
       id, title, author, pages, read, addedToView,
     };
   };
+
   /** function to insert the data into the table */
-  const render = (newBook) => {
+  render = (newBook) => {
     const row = document.createElement('tr');
     row.setAttribute('id', newBook.id);
 
@@ -46,14 +100,14 @@ const LibraryApp = () => {
     row.appendChild(td3);
     row.appendChild(td4);
     row.appendChild(td5);
-    table.appendChild(row);
+    this.table.appendChild(row);
   };
 
-  const LoopBooks = () => {
-    for (let i = 0; i < library.length; i += 1) {
-      const currentBook = library[i];
+  LoopBooks = () => {
+    for (let i = 0; i < this.library.length; i += 1) {
+      const currentBook = this.library[i];
       if (!currentBook.addedToView) {
-        render(library[i]);
+        this.render(this.library[i]);
         currentBook.addedToView = true;
       }
     }
@@ -61,87 +115,44 @@ const LibraryApp = () => {
 
 
   /** Method to add the book */
-  const addBookToLibrary = (newBook) => {
-    for (let i = 0; i < library.length; i += 1) {
-      if (library[i].id === newBook.id) {
+  addBookToLibrary = (newBook) => {
+    for (let i = 0; i < this.library.length; i += 1) {
+      if (this.library[i].id === newBook.id) {
         return;
       }
     }
-    library.push(newBook);
-    LoopBooks();
+    this.library.push(newBook);
+    this.LoopBooks();
   };
-  const toggleFormContainer = () => {
-    formContainer.classList.toggle('active');
-    newBookForm.classList.toggle('active');
-    newBookFormButton.classList.toggle('active');
+
+  toggleFormContainer = () => {
+    this.formContainer.classList.toggle('active');
+    this.newBookForm.classList.toggle('active');
+    this.newBookFormButton.classList.toggle('active');
   };
-  const removeBook = (id) => {
+
+  removeBook = (id) => {
     const row = document.getElementById(id);
     row.remove();
-    for (let i = 0; i < library.length; i += 1) {
-      const currentBook = library[i];
+    for (let i = 0; i < this.library.length; i += 1) {
+      const currentBook = this.library[i];
       if (currentBook.id === id) {
-        library.splice(i, 1);
+        this.library.splice(i, 1);
       }
     }
   };
 
-  const togglebookRead = (id) => {
-    for (let i = 0; i < library.length; i += 1) {
-      const currentBook = library[i];
+  togglebookRead = (id) => {
+    for (let i = 0; i < this.library.length; i += 1) {
+      const currentBook = this.library[i];
       if (currentBook.id === id) {
-        library[i].read = !library[i].read;
+        this.library[i].read = !this.library[i].read;
         return;
       }
     }
   };
-
-  return () => {
-    /** variable to add listeners to the new book */
-    newBookForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      const title = newBookForm.title.value;
-      const author = newBookForm.author.value;
-      const pages = newBookForm.pages.value;
-      let read = newBookForm.read.checked;
-      if (read) {
-        read = true;
-      } else {
-        read = false;
-      }
-      const newBook = Book(title, author, pages, read);
-      addBookToLibrary(newBook);
-    });
-
-    newBookFormButton.addEventListener('click', () => {
-      toggleFormContainer();
-    });
-    cancelFormContainer.addEventListener('click', () => {
-      toggleFormContainer();
-    });
+}
 
 
-    table.addEventListener('click', (e) => {
-      if (e.target.classList.contains('removeBook')) {
-        const { id } = e.target.parentNode.parentNode;
-        removeBook(id);
-      }
-
-      if (e.target.classList.contains('switch')) {
-        e.target.classList.toggle('active');
-        const { id } = e.target.parentNode.parentNode;
-        togglebookRead(id);
-      }
-      if (e.target.classList.contains('cursor')) {
-        e.target.parentNode.classList.toggle('active');
-        const { id } = e.target.parentNode.parentNode.parentNode;
-        togglebookRead(id);
-      }
-    });
-  };
-};
-
-
-const App = LibraryApp();
-App();
+const App = new LibraryApp();
+App.run();
