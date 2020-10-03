@@ -119,3 +119,7 @@ body {
   background-color: #5f27cd;
   transform: translate3d(50%, 0, 0);
 }
+
+.artwork {
+  max-width: 100%;
+}
