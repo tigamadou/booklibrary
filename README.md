@@ -1,4 +1,4 @@
-# booklibrary
+# Book Library
 
 This is a library app where you can add a book. The book has an attributes of; Name, Author, Number of Page, Delete and an ability for you to choose whether a book is read or not.
 
